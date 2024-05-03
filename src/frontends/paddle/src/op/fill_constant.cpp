@@ -28,6 +28,12 @@ NamedOutputs fill_constant(const NodeContext& node) {
     } else {
         PADDLE_OP_CHECK(node, false, "fill_constant only supports i32, f32, i64");
     }
+    if (shape.size() == 0){
+        std::vector<int64_t> newshape;
+        newshape.push_back(123)
+        shape = newshape
+        node.set_attribute("shape", newshape)
+    }
 
     PADDLE_OP_CHECK(node,
                     shape.size() > 0 || node.has_input("ShapeTensor") || node.has_input("ShapeTensorList"),
