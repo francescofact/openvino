@@ -30,7 +30,7 @@ NamedOutputs fill_constant(const NodeContext& node) {
     }
     if (shape.size() == 0){
         std::vector<int64_t> newshape;
-        newshape.push_back(123)
+        newshape.push_back(1)
         shape = newshape
         node.set_attribute("shape", newshape)
     }
